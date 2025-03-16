@@ -1,68 +1,29 @@
 ﻿@{
     ViewData["Title"] = "Consultation";
 }
-
 <div class="container mt-4">
     <h2 class="mb-4">Book a consultation with your lecturer.</h2>
-
-    <form id="consultForm" method="post" class="needs-validation" novalidate>
+    <form id="consultForm" method="post">
         <div class="row mb-3">
             <div class="col-md-6">
                 <label for="firstName" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstName" name="FirstName" required>
-                <div class="invalid-feedback">
-                    Please enter your first name.
-                </div>
             </div>
             <div class="col-md-6">
                 <label for="lastName" class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="lastName" name="LastName" required>
-                <div class="invalid-feedback">
-                    Please enter your last name.
-                </div>
             </div>
         </div>
-
         <div class="row mb-3">
             <div class="col-md-9">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="Email" required>
-                <div class="invalid-feedback">
-                    Please enter a valid email address.
-                </div>
             </div>
         </div>
-
         <div class="mb-3">
             <label for="comments" class="form-label">Comments</label>
             <textarea class="form-control" id="comments" name="Comments" rows="3"></textarea>
         </div>
-
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
-@section Scripts {
-    <script>
-        // JavaScript for form validation
-        (function () {
-            'use strict'
-
-            // Fetch all forms that need validation
-            var forms = document.querySelectorAll('.needs-validation')
-
-            // Loop through forms and prevent submission if invalid
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
-
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
-    </script>
-}
